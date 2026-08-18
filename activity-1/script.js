@@ -7,6 +7,7 @@ const tasks = [];
 
 function render() {
     taskList.innerHTML = "";
+    //clears the list first.
 
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
@@ -21,9 +22,11 @@ function render() {
     const deleteBtn = document.createElement("span");
     deleteBtn.textContent = "Delete";
     //the delete button.
+
     deleteBtn.title = "Delete";
     /*when delete is clicked, remove the task 
      from the array and re-render the list.*/
+
      deleteBtn.addEventListener("click", () => {
         tasks.splice(i, 1);
         //removes 1 task at this "i" index.
@@ -67,8 +70,8 @@ taskInput.addEventListener("keydown", (event) => {
 the Add button for us. */
 })
 
+render();
 /* Calls render() at the end so that the 
 counter and list appears.*/
-render();
 
 
