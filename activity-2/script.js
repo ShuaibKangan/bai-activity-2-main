@@ -7,7 +7,12 @@ const firstTask = document.getElementById("firstTask");
 const lastTask = document.getElementById("lastTask");
 
 // An empty array to hold all the tasks
-const tasks = [];
+const tasks = 
+JSON.parse(localStorage.getItem("tasks")) || [];
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 // Draw every task on the screen from the tasks array
 function render() {
@@ -26,6 +31,7 @@ function render() {
 
     deleteBtn.addEventListener("click", () => {
       tasks.splice(i, 1);
+      saveTasks();
       render();
     });
 
@@ -53,6 +59,7 @@ addBtn.addEventListener("click", () => {
   if (task === "") return;
 
   tasks.push(task);
+  saveTasks();
   render();
   taskInput.value = "";
 });
