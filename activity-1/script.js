@@ -50,7 +50,7 @@ clearLastBtn.addEventListener("click", () => {
     if (task.length === 0) return;
 
     tasks.pop(task)
-    render();
+  
 });
 // Press Enter to add
 taskInput.addEventListener("keydown", (event) => {
