@@ -35,6 +35,15 @@ function render() {
   }
 
   count.textContent = tasks.length + " tasks";
+
+  if (task.length > 0 ) {
+    firstTask.textContent = tasks[0];
+    lastTask.textContent = tasks[task.length - 1];
+  } else {
+    firstTask.textContent = "None";
+    lastTask.textContent = "None";
+  }
+  
 }
 
 // Add a new task
