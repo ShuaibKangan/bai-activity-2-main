@@ -3,6 +3,8 @@ const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 const count = document.getElementById("count");
 const clearLastBtn = document.getElementById("clearLastBtn");
+const firstTask = document.getElementById("firstTask");
+const lastTask = document.getElementById("lastTask");
 
 // An empty array to hold all the tasks
 const tasks = [];
@@ -47,9 +49,9 @@ addBtn.addEventListener("click", () => {
 });
 
 clearLastBtn.addEventListener("click", () => {
-  if (task.length === 0) return;
+  if (tasks.length === 0) return;
 
-  tasks.pop();
+  tasks.pop();  
   render();
 });
 // Press Enter to add
