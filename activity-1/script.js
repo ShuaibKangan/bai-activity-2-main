@@ -3,75 +3,52 @@ const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 const count = document.getElementById("count");
 
+// An empty array to hold all the tasks
 const tasks = [];
 
+// Draw every task on the screen from the tasks array
 function render() {
-    taskList.innerHTML = "";
-    //clears the list first.
+  taskList.innerHTML = ""; // Clear the list first
 
-    for (let i = 0; i < tasks.length; i++) {
-        const task = tasks[i];
-        const li = document.createElement("li");
-    }
-    //make a new list item for each task in the array.
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    const li = document.createElement("li");
 
     const taskText = document.createElement("span");
     taskText.textContent = task;
-    //add the task text to the list item
 
     const deleteBtn = document.createElement("span");
     deleteBtn.textContent = "Delete";
-    //the delete button.
-
     deleteBtn.title = "Delete";
-    /*when delete is clicked, remove the task 
-     from the array and re-render the list.*/
 
-     deleteBtn.addEventListener("click", () => {
-        tasks.splice(i, 1);
-        //removes 1 task at this "i" index.
-
-        render(); /*redraws the screen with 
-        the new list of tasks.*/
-     }
-    );
+    deleteBtn.addEventListener("click", () => {
+      tasks.splice(i, 1);
+      render();
+    });
 
     li.appendChild(taskText);
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
+  }
 
-    //updates the counter with the current legnth.
-    count.textContent = tasks.length + " tasks";
+  count.textContent = tasks.length + " tasks";
 }
 
+// Add a new task
 addBtn.addEventListener("click", () => {
-    const task = taskInput.value.trim();
-    /*removes whitespace from the 
-    beginning and end of the string.*/
+  const task = taskInput.value.trim();
 
-    if (task === "") return; /*Does nothing if no
-    value has been entered.*/
+  if (task === "") return;
 
-    tasks.push(task);
-    //adds the new task to the end of the array.
-
-    render(); /*redraws the screen with the new 
-    list of tasks.*/
-
-    taskInput.value = "";
-    /*clear the input field after the task has 
-     been added.*/
-
+  tasks.push(task);
+  render();
+  taskInput.value = "";
 });
 
+// Press Enter to add
 taskInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") addBtn.click();
-/* Pressing the Enter button in the input box clicks
-the Add button for us. */
+  if (event.key === "Enter") addBtn.click();
 });
 
+// Show the list when the page loads
 render();
-/* Calls render() at the end so that the 
-counter and list appears.*/
-
-
