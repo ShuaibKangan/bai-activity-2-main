@@ -5,6 +5,7 @@ const count = document.getElementById("count");
 const clearLastBtn = document.getElementById("clearLastBtn");
 const firstTask = document.getElementById("firstTask");
 const lastTask = document.getElementById("lastTask");
+const nuke= document.getElementById("nuke");
 
 // An empty array to hold all the tasks
 const tasks = 
