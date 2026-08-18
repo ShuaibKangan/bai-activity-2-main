@@ -41,11 +41,11 @@ function render() {
     taskList.appendChild(li);
 
     //updates the counter with the current legnth.
-    count.textContent = tasks.length + " tasks"
+    count.textContent = tasks.length + " tasks";
 }
 
 addBtn.addEventListener("click", () => {
-    const task = taskInput.ariaValueMax.trim();
+    const task = taskInput.value.trim();
     /*removes whitespace from the 
     beginning and end of the string.*/
 
@@ -68,7 +68,7 @@ taskInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") addBtn.click();
 /* Pressing the Enter button in the input box clicks
 the Add button for us. */
-})
+});
 
 render();
 /* Calls render() at the end so that the 
