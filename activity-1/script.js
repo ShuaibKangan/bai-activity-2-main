@@ -61,3 +61,14 @@ addBtn.addEventListener("click", () => {
 
 });
 
+taskInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") addBtn.click();
+/* Pressing the Enter button in the input box clicks
+the Add button for us. */
+})
+
+/* Calls render() at the end so that the 
+counter and list appears.*/
+render();
+
+
