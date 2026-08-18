@@ -47,10 +47,9 @@ addBtn.addEventListener("click", () => {
 });
 
 clearLastBtn.addEventListener("click", () => {
-    if (task.length === 0) return;
+  if (task.length === 0) return;
 
-    tasks.pop();
-  console.log(task)
+  tasks.pop();
   render();
 });
 // Press Enter to add
