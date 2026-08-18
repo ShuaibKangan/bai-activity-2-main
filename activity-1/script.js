@@ -38,7 +38,7 @@ function render() {
 
   if (task.length > 0 ) {
     firstTask.textContent = tasks[0];
-    lastTask.textContent = tasks[task.length - 1];
+    lastTask.textContent = tasks[tasks.length - 1];
   } else {
     firstTask.textContent = "None";
     lastTask.textContent = "None";
