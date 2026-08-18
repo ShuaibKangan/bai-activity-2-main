@@ -36,7 +36,7 @@ function render() {
 
   count.textContent = tasks.length + " tasks";
 
-  if (task.length > 0 ) {
+  if (tasks.length > 0 ) {
     firstTask.textContent = tasks[0];
     lastTask.textContent = tasks[tasks.length - 1];
   } else {
