@@ -2,6 +2,7 @@ const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 const count = document.getElementById("count");
+const clearLastBtn = document.getElementById("clearLastBtn");
 
 // An empty array to hold all the tasks
 const tasks = [];
@@ -44,6 +45,14 @@ addBtn.addEventListener("click", () => {
   render();
   taskInput.value = "";
 });
+
+clearLastBtn.removeEventListener("click", () => {
+    const task = clearLastBtn.value.trim });
+
+    if (task === "") return;
+    tasks.pop(task)
+    render();
+    taskInput.value = "";
 
 // Press Enter to add
 taskInput.addEventListener("keydown", (event) => {
