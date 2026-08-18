@@ -47,13 +47,13 @@ addBtn.addEventListener("click", () => {
 });
 
 clearLastBtn.removeEventListener("click", () => {
-    const task = clearLastBtn.value.trim });
+    const task = clearLastBtn.value.trim();
 
     if (task === "") return;
     tasks.pop(task)
     render();
     taskInput.value = "";
-
+});
 // Press Enter to add
 taskInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") addBtn.click();
