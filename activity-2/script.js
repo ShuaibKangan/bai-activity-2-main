@@ -71,6 +71,10 @@ clearLastBtn.addEventListener("click", () => {
   tasks.pop();  
   render();
 });
+
+nuke,addEventListener("click", () => {
+  localStorage.clear() 
+});
 // Press Enter to add
 taskInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") addBtn.click();
